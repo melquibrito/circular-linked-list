@@ -128,29 +128,6 @@ public class CircularLinkedList<T extends Comparable> {
     public synchronized void addNeatly(T object) {
         add(object);
         sort();
-        //The following algrithm can be used without the need of a sort method
-        //If always used instead of any other adding method, the list will always be sorted
-        /*Element added = new Element(object, null);
-        if (!isEmpty()) {
-            int index = 0;
-            Element node = first;
-            while (node != null) {
-                if (object.compareTo(node.object) < 0) {
-                    break;
-                }
-                node = node.next;
-                index++;
-            }
-            if (index == 0) {
-                added.next = first;
-                first = added;
-            } else {
-                added.next = getElement(index);
-                getElement(index - 1).next = added;
-            }
-        } else {
-            first = added;
-        }*/
     }
 
     public void sort() {
