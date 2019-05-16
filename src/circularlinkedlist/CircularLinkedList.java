@@ -138,27 +138,27 @@ public class CircularLinkedList<T extends Comparable> {
                     comesFirst = getElement(i);
                 }
             }
-            
+
             Element previous, last = getElement(size() - 1), next = comesFirst.next;
-            if(last == comesFirst) {
+            if (last == comesFirst) {
                 last = getElement(size() - 2);
             }
             if (comesFirst != first) {
                 previous = getElement(indexOf(comesFirst.object) - 1);
                 comesFirst.next = first;
-                if(next != first) {
+                if (next != first) {
                     previous.next = next;
-                }else{
+                } else {
                     previous.next = comesFirst;
                 }
                 first = comesFirst;
                 last.next = first;
             }
-            
+
             int startingPoint = 2;
             for (int i = 1; i < this.size(); i++) {
                 comesFirst = getElement(i);
-                
+
                 for (int j = startingPoint; j < this.size(); j++) {
                     if (comesFirst.object.compareTo(get(j)) > 0) {
                         comesFirst = getElement(j);
@@ -197,7 +197,7 @@ public class CircularLinkedList<T extends Comparable> {
                 if (node.object.equals(object) || node.object.compareTo(object) == 0) {
                     return i;
                 }
-                if(node.next != first) {
+                if (node.next != first) {
                     node = node.next;
                 }
                 i++;
@@ -219,7 +219,7 @@ public class CircularLinkedList<T extends Comparable> {
                     added.next = first.next;
                     getElement(this.size() - 1).next = added;
                     first = added;
-                    
+
                 } else {
                     added.next = getElement(index).next;
                     getElement(index - 1).next = added;
