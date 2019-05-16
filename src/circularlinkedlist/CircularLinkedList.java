@@ -8,9 +8,7 @@ public class CircularLinkedList<T extends Comparable> {
             this.object = object;
             this.next = next;
         }
-
-        Element() {
-        }
+        Element() {}
 
         T object;
         Element next;
